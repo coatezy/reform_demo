@@ -13,6 +13,8 @@
 
   <%= f.input :title %>
   <%= f.input :body %>
+
+  <p>Please select at least two categories.</p>
   <%= f.association :categories, as: :check_boxes %>
 
   <div class="actions">
