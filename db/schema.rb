@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150810210121) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -24,8 +27,8 @@ ActiveRecord::Schema.define(version: 20150810210121) do
     t.integer "post_id",     null: false
   end
 
-  add_index "categories_posts", ["category_id"], name: "index_categories_posts_on_category_id"
-  add_index "categories_posts", ["post_id"], name: "index_categories_posts_on_post_id"
+  add_index "categories_posts", ["category_id"], name: "index_categories_posts_on_category_id", using: :btree
+  add_index "categories_posts", ["post_id"], name: "index_categories_posts_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
