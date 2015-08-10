@@ -4,4 +4,8 @@ A demo app to demonstrate the issue raised here:
 
 https://github.com/apotonick/reform/issues/270
 
-The issue can be replicated by selecting a single category. You will notice that the category checkboxes are not re-populated when a validation error occurs. 
+The issue can be replicated by selecting a single category. You will notice that the category checkboxes are not re-populated when a validation error occurs.
+
+A working demo can be seen here:
+
+https://fathomless-gorge-7498.herokuapp.com
