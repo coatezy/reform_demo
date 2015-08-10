@@ -3,7 +3,7 @@ class PostForm < Reform::Form
 
   model :post
 
-  properties :title, :body, :category_ids, validates: {presence: true} 
+  properties :title, :body, validates: {presence: true} 
   property :category_ids
 
   validates :category_ids, length: {minimum: 2, message: 'Select at least two categories'}

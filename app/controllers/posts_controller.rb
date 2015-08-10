@@ -3,13 +3,11 @@ class PostsController < ApplicationController
   before_action :set_form
 
   # GET /posts
-  # GET /posts.json
   def index
     @posts = Post.all
   end
 
   # GET /posts/1
-  # GET /posts/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class PostsController < ApplicationController
   end
 
   # POST /posts
-  # POST /posts.json
   def create
     if @form.validate(params[:post])
       @form.save
@@ -33,7 +30,6 @@ class PostsController < ApplicationController
   end
 
   # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
     if @form.validate(params[:post])
       @form.save
@@ -44,13 +40,9 @@ class PostsController < ApplicationController
   end
 
   # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 
   private
