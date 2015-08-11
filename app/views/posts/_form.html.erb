@@ -15,7 +15,7 @@
   <%= f.input :body %>
 
   <p>Please select at least two categories.</p>
-  <%= f.association :categories, as: :check_boxes %>
+  <%= f.input :category_ids, as: :check_boxes, collection: Category.all %>
 
   <div class="actions">
     <%= f.submit %>
