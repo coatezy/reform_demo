@@ -9,6 +9,6 @@ class PostForm < Reform::Form
   validates :category_ids, length: {minimum: 2, message: 'Select at least two categories'}
 
   def category_ids=(value)
-    super value.select(&:present?)
+    super value.select(&:present?).map(&:to_i)
   end
 end
